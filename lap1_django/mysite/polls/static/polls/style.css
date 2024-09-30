@@ -1,0 +1,84 @@
+Reset một số kiểu mặc định của trình duyệt
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Căn giữa và tạo khoảng cách cho trang */
+h1 {
+  text-align: center;
+  color: #4A90E2;
+  margin: 20px 0;
+}
+
+/* Danh sách câu hỏi */
+ul {
+  list-style-type: none; /* Xóa dấu đầu dòng */
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto; /* Căn giữa danh sách */
+}
+
+/* Mỗi câu hỏi */
+li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: transform 0.3s; /* Hiệu ứng khi hover */
+}
+
+/* Hiệu ứng hover cho mỗi câu hỏi */
+li:hover {
+  transform: scale(1.02); /* Phóng to một chút khi hover */
+}
+
+/* Liên kết câu hỏi */
+a {
+  text-decoration: none; /* Xóa gạch chân */
+  color: #333; /* Màu chữ */
+  font-weight: bold;
+}
+
+a:hover {
+  color: #4A90E2; /* Thay đổi màu khi hover */
+}
+
+/* Form */
+form {
+  max-width: 600px;
+  margin: 20px auto; /* Căn giữa form */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho form */
+}
+
+/* Nút submit */
+input[type="submit"] {
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #357ABD; /* Màu tối hơn khi hover */
+}
+
+/* Đường viền cho trường lựa chọn */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Màu sắc cho thông báo lỗi */
+strong {
+  color: red;
+}
