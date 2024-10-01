@@ -1,0 +1,20 @@
+<!-- books/templates/books/add_book.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Add New Book</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  
+        <button type="submit">Add Book</button>
+    </form>
+    <a href="{% url 'book_list' %}">Return Book List</a>
+</body>
+</html>
