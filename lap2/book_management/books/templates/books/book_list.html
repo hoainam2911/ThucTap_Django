@@ -1,0 +1,22 @@
+<!-- books/templates/books/book_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Book List</h1>
+    <a href="{% url 'add_book' %}">Add New Book</a>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - {{ book.author }} ({{ book.publication_year }})</li>
+            <a href="{% url 'edit_book' book.pk %}">Edit</a> |
+            <a href="{% url 'delete_book' book.pk %}">Delete</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
