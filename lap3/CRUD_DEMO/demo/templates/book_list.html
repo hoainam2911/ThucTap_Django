@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Book List</h2>
+        <ul>
+          {% for book in books %}
+            <li><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <a href="{% url 'create_book' %}">Add new book</a>
+    </div>
+</body>
+</html>
