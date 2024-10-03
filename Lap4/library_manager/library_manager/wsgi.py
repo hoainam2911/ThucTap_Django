@@ -1,5 +1,5 @@
 """
-WSGI config for CRUD_DEMO project.
+WSGI config for library_manager project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CRUD_DEMO.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'library_manager.settings')
 
 application = get_wsgi_application()
