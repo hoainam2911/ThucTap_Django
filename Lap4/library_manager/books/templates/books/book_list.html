@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager - Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Books</h1>
+    <ul>
+        {% for book in all_books %}
+            <li>{{ book.title }} by {{ book.author.name }} ({{ book.published_date }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books with "Hành Trình Đến Vô Tận" in the Title</h2>
+    <ul>
+        {% for book in specific_books %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books by Author "Hoài Nam"</h2>
+    <ul>
+        {% for book in author_books %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books by Genre "Phiêu Lưu"</h2>
+    <ul>
+        {% for book in genre_books %}
+            <li>{{ book.title }} (Genre: {{ book.genre.name }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Author Book Counts</h2>
+    <ul>
+        {% for author in author_counts %}
+            <li>{{ author.name }}: {{ author.num_books }} books</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Recent Books (Published after 2020)</h2>
+    <ul>
+        {% for book in recent_books %}
+            <li>{{ book.title }} by {{ book.author.name }} (Published: {{ book.published_date }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books with "Đến" in the Title</h2>
+    <ul>
+        {% for book in books_with_title_containing %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Authors with Multiple Books</h2>
+    <ul>
+        {% for author in authors_with_multiple_books %}
+            <li>{{ author.name }} has {{ author.num_books }} books</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books by Each Author</h2>
+    {% for author, books in books_by_authors.items %}
+        <h3>{{ author.name }}</h3>
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }} (Published: {{ book.published_date }})</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Books Sorted by Genre</h2>
+    {% for genre, books in books_sorted_by_genre.items %}
+        <h3>{{ genre.name }}</h3>
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }} (Published: {{ book.published_date }})</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Books with Genres</h2>
+    <ul>
+        {% for book in books_with_genres %}
+            <li>{{ book.title }} (Genre: {{ book.genre.name }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Authors and Their Books</h2>
+    {% for author in authors_and_books %}
+        <h3>{{ author.name }}</h3>
+        <ul>
+            {% for book in author.book_set.all %}
+                <li>{{ book.title }} (Published: {{ book.published_date }})</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
