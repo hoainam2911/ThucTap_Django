@@ -16,7 +16,7 @@ def book_list(request):
     books_sorted_by_genre = {genre: genre.book_set.order_by('-published_date') for genre in Genre.objects.all()}
     books_with_genres = Book.objects.filter(genre__isnull=False)
     authors_and_books = Author.objects.prefetch_related('book_set').all()
-
+    
     context = {
         'all_books': all_books,
         'specific_books': specific_books,
