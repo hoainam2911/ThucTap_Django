@@ -1,0 +1,155 @@
+/* style.css */
+
+/* Reset margin và padding cho tất cả các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Sử dụng font chữ dễ đọc */
+    background-color: #f4f4f4; /* Màu nền nhẹ nhàng */
+    color: #333; /* Màu chữ tối cho dễ đọc */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    padding: 20px; /* Padding cho body */
+}
+
+h1 {
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    color: #2c3e50; /* Màu tiêu đề */
+}
+
+a {
+    text-decoration: none; /* Bỏ gạch chân của link */
+    color: #2980b9; /* Màu của link */
+    font-weight: bold; /* Làm cho link đậm hơn */
+}
+
+a:hover {
+    color: #3498db; /* Thay đổi màu khi hover */
+}
+
+/* Danh sách sách */
+ul {
+    list-style-type: none; /* Bỏ dấu đầu dòng */
+    padding: 0; /* Bỏ padding */
+}
+
+li {
+    background: #fff; /* Màu nền trắng cho mỗi item */
+    margin: 10px 0; /* Khoảng cách giữa các item */
+    padding: 15px; /* Padding cho từng item */
+    border-radius: 8px; /* Bo tròn góc */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho từng item */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển tiếp khi hover */
+}
+
+li:hover {
+    transform: translateY(-2px); /* Nâng item lên khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+/* Nút thêm sách */
+.add-book-btn {
+    display: inline-block; /* Đặt kiểu block để có padding */
+    background-color: #2ecc71; /* Màu nền cho nút */
+    color: #fff; /* Màu chữ trắng */
+    padding: 10px 20px; /* Padding cho nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    font-size: 16px; /* Kích thước chữ */
+    margin-bottom: 20px; /* Khoảng cách dưới nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.add-book-btn:hover {
+    background-color: #27ae60; /* Thay đổi màu nền khi hover */
+}
+
+
+/* style.css */
+
+/* Reset margin và padding cho tất cả các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Sử dụng font chữ dễ đọc */
+    background-color: #f4f4f4; /* Màu nền nhẹ nhàng */
+    color: #333; /* Màu chữ tối cho dễ đọc */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    padding: 20px; /* Padding cho body */
+}
+
+h1 {
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    color: #2c3e50; /* Màu tiêu đề */
+}
+
+form {
+    background: #fff; /* Màu nền trắng cho form */
+    padding: 20px; /* Padding cho form */
+    border-radius: 8px; /* Bo tròn góc cho form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+    max-width: 600px; /* Giới hạn chiều rộng của form */
+    margin: auto; /* Canh giữa form */
+}
+
+label {
+    display: block; /* Chuyển label thành block để dễ canh chỉnh */
+    margin-bottom: 8px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Làm cho label đậm hơn */
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%; /* Chiều rộng 100% cho input */
+    padding: 10px; /* Padding cho input */
+    margin-bottom: 15px; /* Khoảng cách dưới input */
+    border: 1px solid #ccc; /* Đường viền cho input */
+    border-radius: 4px; /* Bo tròn góc cho input */
+    transition: border-color 0.3s; /* Hiệu ứng chuyển tiếp cho border */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #2980b9; /* Thay đổi màu border khi focus */
+}
+
+textarea {
+    min-height: 100px; /* Chiều cao tối thiểu cho textarea */
+}
+
+button {
+    background-color: #2ecc71; /* Màu nền cho nút */
+    color: #fff; /* Màu chữ trắng */
+    padding: 10px 20px; /* Padding cho nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    font-size: 16px; /* Kích thước chữ */
+    border: none; /* Bỏ đường viền */
+    cursor: pointer; /* Hiển thị con trỏ như tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+button:hover {
+    background-color: #27ae60; /* Thay đổi màu nền khi hover */
+}
+
+a.return-link {
+    display: inline-block; /* Đặt kiểu block để có padding */
+    color: #2980b9; /* Màu của link */
+    text-decoration: none; /* Bỏ gạch chân của link */
+    margin-top: 20px; /* Khoảng cách trên link */
+    text-align: center; /* Canh giữa link */
+}
+
+a.return-link:hover {
+    color: #3498db; /* Thay đổi màu khi hover */
+}

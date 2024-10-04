@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager - Advanced Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Books</h1>
+    <ul>
+        {% for book in all_books %}
+            <li>{{ book.title }} by {{ book.author.name }} ({{ book.published_date }}) - Genre: {{ book.genre.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Complex Query - Books by "Hoài Nam", Published After 2021, Genre "Khoa Học"</h2>
+    <ul>
+        {% for book in complex_books %}
+            <li>{{ book.title }} by {{ book.author.name }} ({{ book.published_date }}) - Genre: {{ book.genre.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books with "Hành Trình" in the Title OR Author "Nam ne"</h2>
+    <ul>
+        {% for book in or_condition_books %}
+            <li>{{ book.title }} by {{ book.author.name }} ({{ book.published_date }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Genres by Book Count</h2>
+    <ul>
+        {% for genre in genre_counts %}
+            <li>{{ genre.name }}: {{ genre.total_books }} books</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Authors with More Than 1 Book</h2>
+    <ul>
+        {% for author in author_stats %}
+            <li>{{ author.name }}: {{ author.total_books }} books</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Latest Books by Genre</h2>
+    <ul>
+        {% for book in latest_books_by_genre %}
+            <li>{{ book.title }} by {{ book.author.name }} (Published: {{ book.published_date }}) - Genre: {{ book.genre.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
