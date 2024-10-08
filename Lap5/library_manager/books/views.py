@@ -15,11 +15,8 @@ def book_list(request):
     )
 
     genre_counts = Genre.objects.annotate(total_books=Count('book')).order_by('-total_books')
-
     author_stats = Author.objects.annotate(total_books=Count('book')).filter(total_books__gt=1)
-
     latest_books_by_genre = Book.objects.filter(genre__isnull=False).order_by('genre', '-published_date')
-
     all_books = Book.objects.prefetch_related('author', 'genre')
 
     context = {
