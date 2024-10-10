@@ -1,0 +1,15 @@
+<h1>Add New Contact</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Phone Number:</label>
+    <input type="text" name="phone" required>
+    <label>Email:</label>
+    <input type="email" name="email">
+    <label>Address:</label>
+    <textarea name="address"></textarea>
+    <label>Company:</label>
+    <input type="text" name="company">
+    <button type="submit">Add Contact</button>
+</form>
