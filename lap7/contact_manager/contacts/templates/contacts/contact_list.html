@@ -1,0 +1,28 @@
+<h1>Contacts</h1>
+<form method="get">
+    <input type="text" name="name" placeholder="Search by name" value="{{ filter.form.name.value }}">
+    <input type="text" name="phone" placeholder="Search by phone number" value="{{ filter.form.phone.value }}">
+    <input type="text" name="email" placeholder="Search by email" value="{{ filter.form.email.value }}">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for contact in contacts %}
+        <li>{{ contact.name }} - {{ contact.phone }} - {{ contact.email }}
+            <form method="post" action="{% url 'send_email' contact.id %}">
+                {% csrf_token %}
+                <button type="submit">Send Email</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<div>
+    {% for num in contacts.paginator.page_range %}
+        {% if contacts.number == num %}
+            <strong>{{ num }}</strong>
+        {% else %}
+            <a href="?page={{ num }}&{{ request.GET.urlencode }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+</div>
